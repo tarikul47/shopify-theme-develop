@@ -1,0 +1,1 @@
+Let's continue the Shopify theme development lesson. We finished the foundations and are ready for Step 10: Building a custom section.

@@ -1,12 +1,4 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
     "hero_jVaWmY": {
       "type": "hero",
@@ -15,14 +7,14 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "width": "fit-content",
+            "text": "<h2>Keep it Cool</h2>",
+            "width": "100%",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
+            "type_preset": "h1",
+            "font": "var(--font-heading--family)",
+            "font_size": "4rem",
+            "line_height": "display-tight",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
@@ -37,14 +29,55 @@
           },
           "blocks": {}
         },
-        "button_H9gpTf": {
+        "text_subheading": {
+          "type": "text",
+          "name": "t:names.subheading",
+          "settings": {
+            "text": "<p>Discover our new arrivals for the season.</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "1.25rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 12,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_girls": {
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
+            "label": "Shop Girls",
+            "link": "shopify://collections/girls",
             "open_in_new_tab": false,
-            "style_class": "button-secondary",
+            "style_class": "button-primary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
+        "button_boys": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop Boys",
+            "link": "shopify://collections/boys",
+            "open_in_new_tab": false,
+            "style_class": "button-primary",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -55,7 +88,9 @@
       },
       "block_order": [
         "text_YLPk4p",
-        "button_H9gpTf"
+        "text_subheading",
+        "button_girls",
+        "button_boys"
       ],
       "name": "t:names.hero",
       "settings": {
@@ -68,24 +103,90 @@
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
         "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
         "section_width": "page-width",
-        "section_height": "medium",
+        "section_height": "large",
         "section_height_custom": 50,
         "color_scheme": "scheme-6",
-        "toggle_overlay": true,
+        "toggle_overlay": false,
         "overlay_color": "#12121266",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
         "reflection_opacity": 75,
         "padding-block-start": 100,
-        "padding-block-end": 72
+        "padding-block-end": 100
+      }
+    },
+    "collection_list_H6f9Jz": {
+      "type": "collection-list",
+      "blocks": {
+        "girls": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "girls",
+            "show_collection_title": true,
+            "title_alignment": "center",
+            "title_position": "bottom",
+            "title_type_preset": "h4"
+          }
+        },
+        "boys": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "boys",
+            "show_collection_title": true,
+            "title_alignment": "center",
+            "title_position": "bottom",
+            "title_type_preset": "h4"
+          }
+        },
+        "babies": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "babies",
+            "show_collection_title": true,
+            "title_alignment": "center",
+            "title_position": "bottom",
+            "title_type_preset": "h4"
+          }
+        },
+        "accessories": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "accessories",
+            "show_collection_title": true,
+            "title_alignment": "center",
+            "title_position": "bottom",
+            "title_type_preset": "h4"
+          }
+        },
+        "shoes": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "shoes",
+            "show_collection_title": true,
+            "title_alignment": "center",
+            "title_position": "bottom",
+            "title_type_preset": "h4"
+          }
+        }
+      },
+      "block_order": ["girls", "boys", "babies", "accessories", "shoes"],
+      "name": "Shop by Category",
+      "settings": {
+        "columns": 5,
+        "columns_mobile": "1",
+        "section_width": "page-width",
+        "gap": 16,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 48,
+        "padding-block-end": 48
       }
     },
     "product_list_fa6P9H": {
@@ -129,12 +230,12 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h3>New Arrivals</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
+                "type_preset": "h3",
+                "font": "var(--font-heading--family)",
                 "font_size": "",
                 "line_height": "normal",
                 "letter_spacing": "normal",
@@ -285,6 +386,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "collection_list_H6f9Jz",
     "product_list_fa6P9H"
   ]
 }
