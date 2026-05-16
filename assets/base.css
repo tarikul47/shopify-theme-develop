@@ -4213,3 +4213,56 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* Gum & Berries Custom Styles */
+:root {
+  --berry-primary: #c2185b;
+  --berry-hover: #a2154d;
+}
+
+.button-primary {
+  box-shadow: 0 4px 10px rgba(194, 24, 91, 0.2);
+  transition: all 0.3s ease !important;
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(194, 24, 91, 0.3);
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.announcement-bar {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.header__menu-item {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Rounded collection tiles */
+.collection-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.footer-content h3 {
+  color: var(--berry-primary);
+  margin-bottom: 1.5rem;
+}
+
+.wishlist-button__icon {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+}
