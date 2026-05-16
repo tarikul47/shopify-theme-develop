@@ -113,6 +113,16 @@
     </div>
   {% endif %}
 
+  <a
+    href="/pages/wishlist"
+    class="header-actions__action wishlist-link"
+    aria-label="Wishlist"
+  >
+    <span class="svg-wrapper">
+      {% render 'icon', icon: 'heart' %}
+    </span>
+  </a>
+
   {% if settings.cart_type == 'drawer' and template.name != 'cart' %}
     <script
       src="{{ 'cart-drawer.js' | asset_url }}"

@@ -1,0 +1,69 @@
+{%- doc -%}
+  Wishlist Button Component
+  Renders a heart icon button to add/remove products from the wishlist.
+
+  @param {object} product - The product object
+{%- enddoc -%}
+
+<script src="{{ 'wishlist.js' | asset_url }}" type="module" fetchpriority="low"></script>
+
+<wishlist-button
+  class="wishlist-button"
+  data-product-id="{{ product.id }}"
+  data-product-handle="{{ product.handle }}"
+>
+  <button
+    type="button"
+    class="button-unstyled wishlist-button__icon"
+    aria-label="{{ 'actions.add_to_wishlist' | t }}"
+    on:click="/toggle"
+  >
+    <span class="svg-wrapper wishlist-button__icon-empty">
+      {% render 'icon', icon: 'heart' %}
+    </span>
+    <span class="svg-wrapper wishlist-button__icon-filled hidden">
+      {% comment %} We might need a filled heart icon, or just use CSS to fill it {% endcomment %}
+      {% render 'icon', icon: 'heart' %}
+    </span>
+  </button>
+</wishlist-button>
+
+{% stylesheet %}
+  .wishlist-button {
+    position: absolute;
+    top: var(--padding-sm);
+    right: var(--padding-sm);
+    z-index: 2;
+  }
+
+  .wishlist-button__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    color: var(--color-foreground);
+  }
+
+  .wishlist-button__icon:hover {
+    transform: scale(1.1);
+  }
+
+  .wishlist-button[active] .wishlist-button__icon-empty {
+    display: none;
+  }
+
+  .wishlist-button[active] .wishlist-button__icon-filled {
+    display: block;
+    color: #c2185b; /* Use our brand color */
+  }
+
+  .wishlist-button[active] svg {
+    fill: currentColor;
+  }
+{% endstylesheet %}

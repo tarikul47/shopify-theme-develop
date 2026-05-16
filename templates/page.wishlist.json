@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding-block-start": 36,
+        "padding-block-end": 36
+      }
+    },
+    "wishlist": {
+      "type": "wishlist-page",
+      "settings": {
+        "padding-block-start": 0,
+        "padding-block-end": 48
+      }
+    }
+  },
+  "order": ["main", "wishlist"]
+}

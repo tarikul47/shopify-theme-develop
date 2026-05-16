@@ -1,0 +1,65 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}">
+  <div class="order-tracking spacing-style text-center" style="{% render 'spacing-style', settings: section.settings %}">
+    <div class="order-tracking__content max-w-[600px] mx-auto">
+      <h2 class="h3">{{ 'content.track_your_order' | t | default: 'Track Your Order' }}</h2>
+      <p>{{ 'content.tracking_info' | t | default: 'To track your order please enter your Order ID in the box below and press the "Track" button. This was given to you on your receipt and in the confirmation email you should have received.' }}</p>
+      
+      <form class="order-tracking__form mt-md">
+        <div class="input-group flex flex-col gap-sm text-left">
+          <label for="order_id" class="font-bold">Order ID</label>
+          <input type="text" id="order_id" name="order_id" placeholder="Found in your confirmation email." class="input">
+        </div>
+        <div class="input-group flex flex-col gap-sm text-left mt-sm">
+          <label for="billing_email" class="font-bold">Billing email</label>
+          <input type="email" id="billing_email" name="billing_email" placeholder="Email you used during checkout." class="input">
+        </div>
+        <button type="submit" class="button button-primary mt-md w-full">Track</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Order Tracking",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section Width",
+      "options": [
+        { "value": "page-width", "label": "Page Width" },
+        { "value": "full-width", "label": "Full Width" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    }
+  ]
+}
+{% endschema %}
